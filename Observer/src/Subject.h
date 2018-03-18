@@ -11,13 +11,12 @@ class Subject {
 public:
 		Subject(std::string& name);
 		~Subject();
-    void notify();
-protected:		
     void addListener(Observer& l);
 	void removeListener(Observer& l);
 	std::string const& getName()const{return name;}
+protected:
+	void notify();
 private:  
-	friend class Observer;
     typedef std::vector<Observer*> Observers;
     Observers observers;
 	

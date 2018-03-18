@@ -9,11 +9,6 @@ int ConcreteObserver2::objectCount=0;
 ConcreteObserver1::ConcreteObserver1(string name):name(name){
 	cout <<"ConcreteObserver1():"<<name<<endl;
 }
-ConcreteObserver1::ConcreteObserver1(string name, Subject& subject):name(name){
-
-	AdapterTemplate< ConcreteObserver1> adapter1(*this, &ConcreteObserver1::operation3, subject);
-	cout <<"ConcreteObserver1(Subject):"<< name << endl;
-}
 void ConcreteObserver1::update(string& subjectName, int callCount){
         cout	<< name << " ConcreteObserver1::update called from "
 							<<subjectName <<" "<< callCount << endl;

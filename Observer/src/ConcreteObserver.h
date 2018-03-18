@@ -8,17 +8,18 @@
 
 using namespace std;
 
-class Subject;
+// Die Concreten Observer sind vollständig unabhängig vom Observer
+// sie sind nicht von Observer abgeleitet, sondern werden durch den
+// "Kit" mit der Anwendung miteinander verbunden
 
 class ConcreteObserver1 {
 public:    
 	ConcreteObserver1(string name);
-	ConcreteObserver1(string name, Subject&);
 	virtual ~ConcreteObserver1();
-  void update(string& subjectName, int callCount);
-  void operation1(string& subjectName, int callCount);
-  void operation2(string& subjectName, int callCount);
-  void operation3(string& subjectName, int callCount);
+	void update(string& subjectName, int callCount);
+	void operation1(string& subjectName, int callCount);
+	void operation2(string& subjectName, int callCount);
+	void operation3(string& subjectName, int callCount);
 private:
 	string name;
 	static int objectCount;
@@ -28,7 +29,7 @@ class ConcreteObserver2 {
 public:   
 	ConcreteObserver2(string name);
 	virtual ~ConcreteObserver2();
-  void update(string& subjectName, int callCount);
+	void update(string& subjectName, int callCount);
 private:
 
 	string name;
