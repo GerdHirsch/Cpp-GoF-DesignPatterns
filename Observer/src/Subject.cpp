@@ -18,6 +18,7 @@ void Subject::notify(){
 	for(auto observer : observers)
 		observer->update(name, callCount);
 
+// old style loop
 //    Observers::iterator it = observers.begin();
 //    Observers::iterator end = observers.end();
 //    while(it != end)
