@@ -1,0 +1,1 @@
+Some example implementations of the GoF Patterns, mostly realized with C++ templates
