@@ -13,24 +13,14 @@ class ConcreteObserver1 {
 public:    
 	ConcreteObserver1(std::string name);
 	virtual ~ConcreteObserver1();
-	void update(std::string& subjectName, int callCount);
-	void operation1(std::string& subjectName, int callCount);
-	void operation2(std::string& subjectName, int callCount);
-	void operation3(std::string& subjectName, int callCount);
+	void update(std::string const& subjectName, int callCount);
+	void operation1(std::string const& subjectName, int callCount);
+	void operation2(std::string const& subjectName, int callCount);
+	void operation3(std::string const& subjectName, int callCount);
 private:
 	std::string name;
 	static int objectCount;
 };
 
-class ConcreteObserver2 {
-public:   
-	ConcreteObserver2(std::string name);
-	virtual ~ConcreteObserver2();
-	void update(std::string& subjectName, int callCount);
-private:
-
-	std::string name;
-	static int objectCount;
-};
 
 #endif //CONCRETEOBSERVER_H

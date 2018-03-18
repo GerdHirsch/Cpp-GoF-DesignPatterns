@@ -19,9 +19,9 @@
 */
 template < typename C >
 class AdapterTemplate : public Observer {
+	using Operation = void (C::*)(std::string const&, int);
 public:
-	AdapterTemplate(C& implementation,
-					void (C::*operation)(std::string&, int))
+	AdapterTemplate(C& implementation, Operation operation)
 	:
 		implementation(implementation),
 		operation(operation){ ; }
@@ -30,12 +30,12 @@ public:
 		std::cout << "~AdapterTemplate()" << std::endl;
 	}
 
-  void update(std::string& subjectName, int callCount){
+  void update(std::string const& subjectName, int callCount){
 		(implementation.*operation)(subjectName, callCount);
   }
 
 private:
     C& implementation;
-	void (C::*operation)(std::string&,int);
+    Operation operation;
 };
 #endif /* ADAPTERTEMPLATE_H_ */

@@ -11,7 +11,7 @@
 */
 class Observer {
 public:    
-	virtual void update(std::string& subjectName, int callCount)=0;
+	virtual void update(std::string const& subjectName, int callCount)=0;
 	virtual ~Observer(){}
 };
 #endif //OBSERVER_H
