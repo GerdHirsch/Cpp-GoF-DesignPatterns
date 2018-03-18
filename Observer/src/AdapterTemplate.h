@@ -8,6 +8,7 @@
 #ifndef ADAPTERTEMPLATE_H_
 #define ADAPTERTEMPLATE_H_
 #include "Observer.h"
+#include <string>
 /*
 	Der Kit zwischen den Komponenten, ein Adapter der von einer Schnittstelle
 	(Operation-Name) auf eine andere mappt, bei Ihm wird die Klasse bekannt gemacht

@@ -6,31 +6,31 @@
 int ConcreteObserver1::objectCount=0;
 int ConcreteObserver2::objectCount=0;
 
+#include <iostream>
+using namespace std;
+
 ConcreteObserver1::ConcreteObserver1(string name):name(name){
-	cout <<"ConcreteObserver1():"<<name<<endl;
+	cout << name  << ": " << __PRETTY_FUNCTION__ << endl;
 }
 void ConcreteObserver1::update(string& subjectName, int callCount){
-        cout	<< name << " ConcreteObserver1::update called from "
+	cout << name << ". " << __PRETTY_FUNCTION__ << " from "
 							<<subjectName <<" "<< callCount << endl;
 }
 void ConcreteObserver1::operation1(string& subjectName, int callCount){
-        cout	<< name << " ConcreteObserver1::operation1 called from "
-							<<subjectName <<" "<<  callCount << endl;
-}
+    cout << name << ". " << __PRETTY_FUNCTION__ << " from "
+						<<subjectName <<" "<< callCount << endl;}
 void ConcreteObserver1::operation2(string& subjectName, int callCount){
-        cout	<< name << " ConcreteObserver1::operation2 called from "
-							<<subjectName<<" "<<  callCount << endl;
-}
+    cout << name << ". " << __PRETTY_FUNCTION__ << " from "
+						<<subjectName <<" "<< callCount << endl;}
 void ConcreteObserver1::operation3(string& subjectName, int callCount){
-        cout	<< name << " ConcreteObserver1::operation3 called from "
-							<<subjectName <<" "<<  callCount << endl;
-}
+    cout << name << ". " << __PRETTY_FUNCTION__ << " from "
+						<<subjectName <<" "<< callCount << endl;}
 ConcreteObserver1::~ConcreteObserver1(){
-		cout <<"~ConcreteObserver1():"<<name<<endl;
+	cout << name <<".~ConcreteObserver1()" << endl;
 }
 //=====================================================================
 ConcreteObserver2::ConcreteObserver2(string name):name(name){
-	cout <<"ConcreteObserver2():"<<name<<endl;
+	cout << name  << ": " << __PRETTY_FUNCTION__ << endl;
 }
 ConcreteObserver2::~ConcreteObserver2(){
 		cout <<"~ConcreteObserver2():"<<name<<endl;

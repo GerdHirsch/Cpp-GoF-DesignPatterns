@@ -3,10 +3,7 @@
 #ifndef CONCRETEOBSERVER_H
 #define CONCRETEOBSERVER_H
 
-#include <iostream>
 #include <string>
-
-using namespace std;
 
 // Die Concreten Observer sind vollständig unabhängig vom Observer
 // sie sind nicht von Observer abgeleitet, sondern werden durch den
@@ -14,25 +11,25 @@ using namespace std;
 
 class ConcreteObserver1 {
 public:    
-	ConcreteObserver1(string name);
+	ConcreteObserver1(std::string name);
 	virtual ~ConcreteObserver1();
-	void update(string& subjectName, int callCount);
-	void operation1(string& subjectName, int callCount);
-	void operation2(string& subjectName, int callCount);
-	void operation3(string& subjectName, int callCount);
+	void update(std::string& subjectName, int callCount);
+	void operation1(std::string& subjectName, int callCount);
+	void operation2(std::string& subjectName, int callCount);
+	void operation3(std::string& subjectName, int callCount);
 private:
-	string name;
+	std::string name;
 	static int objectCount;
 };
 
 class ConcreteObserver2 {
 public:   
-	ConcreteObserver2(string name);
+	ConcreteObserver2(std::string name);
 	virtual ~ConcreteObserver2();
-	void update(string& subjectName, int callCount);
+	void update(std::string& subjectName, int callCount);
 private:
 
-	string name;
+	std::string name;
 	static int objectCount;
 };
 

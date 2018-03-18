@@ -9,6 +9,9 @@
 #include "ConcreteObserver.h"
 #include "AdapterTemplate.h"
 
+#include <iostream>
+using namespace std;
+
 void demoAdapterTemplate(){
 	cout << "demoAdapterTemplate"<<endl;
 
@@ -23,6 +26,8 @@ void demoAdapterTemplate(){
 	s1.addListener(adapter1);
 	s2.addListener(adapter2);
 
+	s1.changeState();
+	s2.changeState();
 	s1.changeState();
 	s2.changeState();
 

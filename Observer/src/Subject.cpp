@@ -9,28 +9,31 @@ using namespace std;
 
 Subject::Subject(string& name):callCount(0), name(name) {}
 Subject::~Subject(){
-	cout << "~Subject()"<<endl;
+	cout << name <<".~Subject() " <<endl;
 }
 
 void Subject::notify(){
 	++callCount;
-	cout << "notify() "<< observers.size() <<" Listener from " << name << endl;
-    Observers::iterator it = observers.begin();
-    Observers::iterator end = observers.end();
-    while(it != end)
-    {
-        (*it)->update(name,callCount);
-        ++it;
-    }
+	cout << name << ".notify() numObservers: "<< observers.size() << endl;
+	for(auto observer : observers)
+		observer->update(name, callCount);
+
+//    Observers::iterator it = observers.begin();
+//    Observers::iterator end = observers.end();
+//    while(it != end)
+//    {
+//        (*it)->update(name,callCount);
+//        ++it;
+//    }
 }
 
 void Subject::addListener(Observer& l){
-	cout << "addListener to " << name<< endl;
+	cout << name <<".addListener" << endl;
     observers.push_back(&l);
 }
 
 void Subject::removeListener(Observer& l){
-	cout << "removeListener from "<< name << endl;
+	cout << name << ".removeListener" << endl;
     Observers::iterator end = remove(observers.begin(), observers.end(),&l);
     observers.erase(end, observers.end());
 }
