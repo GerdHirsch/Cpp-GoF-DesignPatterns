@@ -1,10 +1,3 @@
-/*
- * demoFunctions.cpp
- *
- *  Created on: 18.03.2018
- *      Author: Gerd
- */
-
 #include "ConcreteSubject.h"
 #include "ConcreteObserver.h"
 #include "ConcreteObserver2.h"
@@ -12,6 +5,14 @@
 
 #include <iostream>
 using namespace std;
+
+void demoAdapterTemplate();
+
+int main() {
+	cout << "Observer"<<endl;
+	demoAdapterTemplate();
+}
+
 
 void demoAdapterTemplate(){
 	cout << "demoAdapterTemplate"<<endl;
