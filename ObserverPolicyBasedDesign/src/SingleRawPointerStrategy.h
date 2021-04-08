@@ -11,6 +11,7 @@
 
 class SingleRawPointerStrategy{
 public:
+	void attach(std::weak_ptr<Observer> observer);
 	void attach(Observer* observer){
 		this->observer = observer;
 	}
